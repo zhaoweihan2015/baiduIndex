@@ -1,0 +1,28 @@
+.name {
+  color: #f00;
+}
+.name:hover {
+  color: #00f;
+}
+.name2 a:nth-child(1) {
+  padding-left: 5px;
+}
+.name2 a:nth-child(2) {
+  padding-left: 10px;
+}
+.name2 a:nth-child(3) {
+  padding-left: 15px;
+}
+.name2 a:nth-child(4) {
+  padding-left: 20px;
+}
+.name2 a:nth-child(5) {
+  padding-left: 25px;
+}
+.box {
+  -webkit-transition: height 1s;
+  -o-transition: height 1s;
+  -moz-transition: height 1s;
+  transition: height 1s;
+}
+
