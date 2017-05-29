@@ -1,0 +1,99 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header {
+  height: 32px;
+  min-width: 1200px;
+  border-bottom: 1px solid #ebebeb;
+}
+header ul {
+  width: auto;
+  height: 32px;
+  padding: 0px 10px;
+}
+header ul:first-child {
+  float: right;
+  padding-right: 86px;
+}
+header ul:first-child a {
+  color: #414141;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0px 9px;
+}
+header ul:nth-child(2) {
+  float: left;
+}
+header ul div {
+  float: left;
+}
+header ul li {
+  text-align: center;
+  color: #555;
+  float: left;
+}
+header ul li a {
+  line-height: 32px;
+  font-size: 12px;
+  padding: 0px 4px;
+}
+header ul li a:first-child {
+  color: #808080;
+}
+header ul li img {
+  height: 22px;
+  width: 22px;
+  float: left;
+  padding: 5px 0px;
+}
+.airQuality {
+  font-weight: bold;
+}
+.degree1 {
+  color: #badc00 !important;
+}
+.navlist a {
+  text-decoration: underline;
+  padding: 0px 7px !important;
+  color: #55555a;
+}
+#list {
+  width: 86px;
+  height: 100%;
+  position: absolute;
+  margin-left: 406px;
+  background: #d3d3d3;
+}
+#list a {
+  display: block;
+  height: 33px;
+  width: 86px;
+  float: left;
+  font-weight: normal;
+  padding: 0;
+  text-decoration: none;
+  background: #398bfb;
+  color: #fff;
+  transition: all 0.5s;
+}
+#list a:hover {
+  color: #55555a;
+  background: #fff;
+}
+#list ul {
+  width: 86px;
+  height: auto;
+  background: #f00;
+  padding: 0px;
+}
+#list ul li {
+  height: 76px;
+  width: 100%;
+}
+.menu li:nth-child(7) a,
+.menu li:nth-child(8) a {
+  font-weight: normal;
+}
