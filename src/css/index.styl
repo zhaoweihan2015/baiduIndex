@@ -1,8 +1,10 @@
 //var
 smallfontsize = 12px
 navheight = 32px
+titleheight = 40px
+borderstyle = 1px solid #e3e3e3
 //css
-body,ul
+body,ul,p
  margin 0
  padding 0
  list-style none
@@ -10,21 +12,23 @@ header
  height navheight
  min-width: 1200px
  border-bottom 1px  solid #ebebeb
- ul
+ z-index 200
+ position relative
+ > ul
   width auto
   height navheight
   padding: 0px 10px
   &:first-child
    float right
-   padding-right: 86px
-   a
-    color: #414141
-    font-weight: bold
-    font-size: 14px
-    padding: 0px 9px
+   > li
+    > a
+     color: #414141
+     font-weight: bold
+     font-size: 13px
+     margin 0px 10px
   &:nth-child(2)
    float left
-  div
+  > div
     float: left
   li
     text-align center
@@ -34,52 +38,559 @@ header
      line-height: navheight
      font-size: smallfontsize
      padding:0px 4px
-     &:first-child
-      color: grey
-    img
+    > img
      height: h=22px
      width: h
-     float: left
      padding: 5px 0px
 .airQuality
  font-weight: bold
 .degree1
  color:#badc00!important
 .navlist
- a
-  text-decoration: underline
-  padding: 0px 7px!important
-  color:#55555a
+  >a
+   text-decoration: underline
+   padding: 0px 7px!important
+   color:#55555a
 #list
- width: w = 86px
- height: 100%
- position: absolute
- margin-left: 406px
- background: lightgrey
- a
+ width: w = 85px
+ height:navheight
+ font-size: 13px
+ line-height: 33px
+ color: white
+ margin-right -10px
+ overflow hidden
+ > span
   display: block
-  height: 33px
-  width: w
-  float: left
-  font-weight: normal
-  padding: 0
-  text-decoration: none
   background: #398bfb
-  color: white
-  transition: all  .5s
-  &:hover
+  transition: background  .2s,color .2s
+  border-left: 1px solid #398bfb
+  font-size: 13px
+ &:hover
+  height: 100%
+  > span
    color: #55555a
    background: white
+   border-left: 1px solid #e7e7e7
+  ul
+    opacity: 1
  ul
   width: w
-  height: auto
-  border-bottom 1px solid grey
+  height: 100%
   padding: 0px
+  float: left
+  background: white
+  opacity: 0
+  transition: opacity .2s
+  border-left: 1px solid #e7e7e7
+  position fixed
   li
-   height: 76px
-   width: 100%
+   height: 50px
+   width: 66px
+   margin: 6px 10px
+   padding: 10px 0px
+   border-top: borderstyle
+   a
+    width: 100%
+    text-decoration: none
+    color:  #55555a
+    img 
+     height: h = 36px
+     width: h
+     float: left
+     padding: 0px 15px
+    &:hover
+     text-decoration: underline
 .menu
  li
   &:nth-child(7),&:nth-child(8)
      a
       font-weight: normal
+     &:hover
+      .minlist 
+       display: block
+.upicon
+ height: h = 8px
+ width: w = 12px
+ position: absolute
+ top - h
+ background: url("../img/upicon.png")
+.minlist
+ position: absolute
+ top: 33px
+ width: 68px
+ margin 0 5px
+ height: auto
+ box-shadow: 0px 0px 3px #888888
+ background: white
+ display:none
+ ul
+  li
+   height: 25px
+   a
+    line-height: 25px
+    color: black
+    text-decoration: none
+ .upicon
+   left: 50%
+   margin-left: -6px
+.news
+ height: 120px
+ width: 275px
+ box-shadow: 0px 0px 3px #f0f0f0
+ position: absolute
+ top: navheight+2
+ left 50px
+ border:#e3e3e3 1px solid
+ display none
+ background: white
+ > ul
+  width 250px
+  height auto
+  float left
+  margin 10px 49px
+  > li
+    height 28px
+    width 82px
+    float left
+    background: #398bfb
+    &:nth-child(2)
+     margin-left 14px
+    > a
+     color white
+     line-height 28px
+     text-decoration none
+ .upicon
+  margin-left: 40px
+ #newsNumber
+  text-align: center
+  line-height: 67px
+  font-size: smallfontsize
+  color black
+  border-bottom: borderstyle
+  width: 250px
+  margin 0px 12px
+  span
+   &:first-child
+    padding: 0px 10px
+    font-weight bold
+    font-size 13px
+   &:nth-child(2)
+    color: red
+    padding: 0 3px
+.noNews
+ background: grey!important
+#weather
+ &:hover
+  #weatherShow
+   display: block
+#weatherShow
+ height 200px
+ width 547px
+ position absolute
+ left 0px
+ top navheight
+ border borderstyle
+ box-shadow: 1px 1px 5px #e3e3e3 
+ padding 0 19px
+ display: none
+ background white
+ .upicon
+   margin-left: 75px
+ .title
+   width: 100%
+   float left
+   height navheight
+   border-bottom borderstyle
+   a
+    line-height: navheight
+    font-size smallfontsize
+    &:first-child
+     color #747474
+    &:nth-child(2)
+     color #999999
+    &:nth-child(3)
+     color #3f7df4
+ ul
+  width 100%
+  float left
+  li
+   height 140px
+   width 105px
+   float left
+   text-align: center
+   padding: 10px 0px
+   a
+    font-size: smallfontsize
+    width: 100%
+    display: block
+    line-height: 18px
+    color grey
+   img 
+    height: h=45px
+    width h
+    margin-bottom: 5px
+   &:first-child
+    width 125px
+    a
+     font-weight: bold
+#changebody
+ z-index: 999
+ height: 287px
+ width: 100%
+ position absolute
+ top 0px
+ left 0px
+ background white
+ border-top borderstyle
+ border-bottom borderstyle
+ box-shadow: 0px 2px 5px #e3e3e3
+ transition transform 0.5s,-webkit-transform 0.5s
+ transform translateY(-293px)
+ -webkit-transform translateY(-293px)
+ .title
+  height 46px
+  width 100%
+  float left
+  border-bottom borderstyle
+  ul
+    width: 911px
+    height: 46px
+    margin 0 auto
+    .close,.returnBg
+     float right
+     height  h = 36px
+     line-height h
+     width auto
+     font-size 13px
+     margin-top 10px
+     padding 0px 5px
+    .close
+     color #389cff
+    .returnBg
+     color black
+    .active
+     background: #389cff
+     color: white 
+    li
+      min-width: 42px
+      transition background .2s,color .2s
+      color #555!important
+      &:hover
+       background: #389cff
+       color: white  !important
+    div
+     width: 20px
+     a
+      color lightgrey
+    i
+     height: 36px
+     width: 20px
+     text-align: center
+     float left
+    li,>div
+      height: 36px
+      float: left
+      padding-top: 10px
+      text-align: center
+      a
+       line-height: 36px
+       font-size: 13px
+.show
+ width 100%
+ height 240px
+ float: left  
+ overflow: hidden
+.bodyshow
+    width: 911px
+    height:210px
+    margin 24px auto
+    .imgshow
+     height: 180px
+     width 590px
+     float: left
+     overflow: hidden
+     display: none
+     ul
+      height: 180px
+      width 295px
+      float: left
+      li
+       margin 0 1px 1px 0px
+       height 59px
+       width 97px
+       background lightgray
+       position relative
+       &:hover
+        a
+         opacity 1
+        p
+         opacity: .5
+       a
+        line-height: 20px
+        text-align: center
+        color: white
+        padding: 0
+        height: 20px
+        top 50%
+        margin-top: -10px
+       p
+        background: black
+        height: 100%
+       p,a
+        position: absolute
+        width 100%
+        display: block
+        opacity: 0
+        transition: opacity .3s
+       img 
+        height: 100%
+        width 100%
+        padding: 0px
+      &:nth-child(1)
+       li
+        &:first-child
+         height: 119px
+         width: 195px
+      &:nth-child(2)
+       li
+        &:nth-child(4)
+         height: 119px
+         width: 195px
+.chioce
+   background url("../img/point2.jpg") center no-repeat!important
+.changelist
+ float left
+ width: 590px
+ height 30px
+ ul
+  width: w = 100px
+  height 25px
+  position: relative
+  left 50%
+  margin-top: 5px
+  margin-left: -(w/2)
+  p
+   height h = 25px
+   width h
+   float: left
+   color grey!important
+   &:hover
+    background: lightgray
+  li
+   height 25px
+   width 15px
+   background url("../img/point1.jpg") center no-repeat
+   position relative
+   float left 
+#showDiv
+ height 180px
+ width 264px
+ float: left
+ margin-left 25px
+ position relative
+ background-size:cover
+ #showBg
+  position absolute
+  height 100%
+  width 100%
+  background-image: url("../img/skin_preview.png") ;
+  background-position-x: 270px 
+.file 
+    position: relative;
+    display: inline-block;
+    background: #389cff;
+    width 200px
+    height 32px
+    overflow: hidden;
+    color: white;
+    top 60px
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 32px;
+    input 
+     position: absolute;
+     font-size: 100px;
+     right: 0;
+     top: 0;
+     opacity: 0;
+.tip
+ height 20px
+ width 590px
+ text-align center
+ margin-top: 60px
+ line-height 20px
+ color grey
+ font-size: smallfontsize
+.activeChangeBody
+ transform translateY(0)!important
+ -webkit-transform translateY(0)!important
+#bgarticle
+  background-size cover
+article,#bgarticle
+ position absolute
+ height 100%
+ width 100%
+ top 0px
+ .centerarticle
+  width w = 640px
+  height h = 375px
+  position absolute
+  margin-left  -(w/2)
+  top 20%
+  left 50%
+  .searchChange
+   border 1px solid  #2c82fd
+   >img
+    display none
+   .searchBox
+    display block !important
+  #search
+   height 250px
+   width 100%
+   float left
+   .fileUp 
+    position: relative;
+    display: inline-block;
+    width 120px
+    height 43px
+    overflow: hidden;
+    top 16px
+    text-decoration: none;
+    color: black;
+    padding-left 38px
+    line-height: 43px;
+    border  1px solid #cacbcc
+    left: 50%;
+    margin-left -79px
+    background-image url("../img/up.jpg")
+    background-repeat no-repeat
+    background-position-x 10px
+    >input 
+     position: absolute;
+     font-size: 100px;
+     right: 0;
+     top: 0;
+     opacity: 0;
+   .searchBox
+    height 205px
+    width 100%
+    float left
+    display: none;
+    position relative
+    background white
+    #closeSearch
+      position absolute
+      bottom 0px
+      right 0px
+    .pushPic
+     width 600px
+     height 100px
+     background #fafafa
+     margin 23px 20px 0px 20px
+     overflow hidden
+     a
+       display block 
+       background url("../img/add.jpg") no-repeat center
+       height 100px
+       line-height 20px
+       padding-top 20px
+       color  #999999
+   >img
+    position absolute
+    margin-left -38px
+    margin-top 1px
+   .button 
+    width 101px
+    height  h = 43px
+    background #3388ff
+    line-height h
+    float left
+    text-align center
+    color white
+   input
+    height 39px
+    width 527px
+    border 1px solid #cccccc;
+    float left
+    padding 1px 5px
+    font-size 14px
+    outline:none
+  .logo
+   height 125px
+   width 100%
+   float left
+   img
+    width 260px
+    margin-left 190px
+.ChioceCamera
+ border 1px solid  #2c82fd
+.newBg
+  border-bottom 0px
+  >ul
+   li
+      color white!important
+.newBg
+  >ul
+    &:first-child
+     >li
+      >a
+       color white!important
+.newsearchChange
+ border 0px!important
+ .button
+  background lightgrey!important
+  color black!important
+.history
+  height 185px
+  width 911px
+  margin-bottom 32px
+  float left
+  overflow hidden
+  display none
+  ul
+   li
+    width 97px 
+    height 59px
+    float left
+    background #f5f5f5
+    margin 0px 4px 4px 0px
+    img
+     height 100%
+     width 100%
+     padding 0
+.blackbg
+   display none
+   width 100%
+   height navheight
+   background black
+   opacity .5
+   position absolute
+   top 0px
+   z-index 5
+bottomHeight = 50px
+bottom
+  height bottomHeight
+  width 100%
+  position absolute 
+  bottom 10px
+  ul
+    width 500px
+    height bottomHeight
+    margin 0 auto
+    li
+     text-align center
+     width 100%
+     height (bottomHeight/2)
+     text-align center
+     a
+      font-size smallfontsize
+      color grey
+      text-decoration none
+      line-height (bottomHeight/2)
+      img
+       margin 0px 3px
+      span
+       text-decoration underline
+.blackbg
+ a
+   color white!important

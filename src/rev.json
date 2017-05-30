@@ -1,4 +1,6 @@
 {
   "css/":"dist/css/",
-  "js/":"dist/js/"
+  "js/":"dist/js/",
+  "img/":"dist/img/",
+  "backgroundImg":"dist/backgroundImg/"
 }
